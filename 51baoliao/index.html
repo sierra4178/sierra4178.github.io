@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>51爆料网-51爆料网热点爆料合集_吃瓜黑料热门事件浏览</title>
+<meta name="description" content="51爆料网汇集网络热点爆料与吃瓜黑料内容，按热门事件、最新爆料、话题合集分类浏览，帮助读者快速了解当前讨论集中的热点内容与相关线索。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111921'/%3E%3Cpath d='M18 20h28v7H26v6h16v7H26v10h-8z' fill='%23ff5a3c'/%3E%3Ccircle cx='47' cy='46' r='6' fill='%23ffc247'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0d1117;
+  --bg2:#131a23;
+  --card:#18212c;
+  --line:#26313d;
+  --txt:#e7edf3;
+  --sub:#9aa9b8;
+  --hot:#ff5a3c;
+  --gold:#ffc247;
+  --mint:#4fd1a5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--txt);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,17,23,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;letter-spacing:.5px;white-space:nowrap}
+.logo svg{flex:none}
+.nav-links{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.nav-links a{
+  font-size:14.5px;color:var(--sub);padding:7px 12px;border-radius:8px;
+  transition:.2s;
+}
+.nav-links a:hover{color:var(--txt);background:#1c2530}
+.nav-links a.cta{background:var(--hot);color:#fff;font-weight:600}
+.nav-links a.cta:hover{background:#ff7055}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(700px 300px at 85% -10%, rgba(255,90,60,.20), transparent 70%),
+    radial-gradient(500px 260px at 5% 110%, rgba(79,209,165,.12), transparent 70%),
+    var(--bg2);
+}
+.hero-inner{
+  display:grid;grid-template-columns:1.25fr .75fr;gap:36px;
+  padding:56px 0 52px;align-items:center;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:12.5px;color:var(--gold);
+  border:1px solid rgba(255,194,71,.35);
+  background:rgba(255,194,71,.08);
+  padding:4px 11px;border-radius:99px;margin-bottom:16px;
+}
+.badge i{width:6px;height:6px;border-radius:50%;background:var(--gold);display:block}
+h1{
+  font-size:clamp(28px,4.4vw,44px);
+  line-height:1.25;font-weight:800;letter-spacing:.5px;
+}
+h1 em{font-style:normal;color:var(--hot)}
+.hero p.lead{
+  margin-top:16px;color:var(--sub);font-size:15.5px;max-width:560px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:10px;font-size:15px;font-weight:600;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-main{background:var(--hot);color:#fff}
+.btn-main:hover{background:#ff7055;transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line);color:var(--txt);background:#161e28}
+.btn-ghost:hover{border-color:#3a4757;background:#1b2531}
+.btn[aria-disabled="true"]{opacity:.55;pointer-events:none}
+.hero-stats{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap}
+.hero-stats div b{display:block;font-size:20px;color:var(--gold);font-weight:800}
+.hero-stats div span{font-size:12.5px;color:var(--sub)}
+
+.hero-art{
+  border:1px solid var(--line);border-radius:16px;
+  background:linear-gradient(160deg,#1b2532,#121922);
+  padding:18px;box-shadow:0 20px 44px -22px rgba(0,0,0,.9);
+}
+.hero-art .bar{display:flex;gap:6px;margin-bottom:14px}
+.hero-art .bar i{width:9px;height:9px;border-radius:50%;background:#33404f;display:block}
+.hero-art .bar i:first-child{background:var(--hot)}
+.hero-art .bar i:nth-child(2){background:var(--gold)}
+.hero-art .bar i:nth-child(3){background:var(--mint)}
+.art-line{height:9px;border-radius:5px;background:#26313d;margin-bottom:10px}
+.art-line.w70{width:70%}
+.art-line.w50{width:50%;background:#2e3c4c}
+.art-line.w85{width:85%}
+.art-tag{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.art-tag span{font-size:11.5px;color:var(--sub);border:1px solid var(--line);padding:3px 9px;border-radius:99px}
+
+/* sections */
+section{padding:54px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.sec-head h2{font-size:23px;font-weight:800;letter-spacing:.4px}
+.sec-head h2 span{color:var(--hot);margin-right:8px;font-size:15px;vertical-align:2px}
+.sec-head p{color:var(--sub);font-size:14px}
+.sec-head a.more{font-size:13.5px;color:var(--gold)}
+.sec-head a.more:hover{text-decoration:underline}
+
+/* hot list */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:20px;transition:.22s;
+}
+.card:hover{border-color:#3d4b5c;transform:translateY(-2px)}
+.card .meta{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--sub);margin-bottom:11px}
+.pill{font-size:11.5px;padding:2px 9px;border-radius:99px;font-weight:600}
+.pill.hot{background:rgba(255,90,60,.15);color:#ff8a72}
+.pill.new{background:rgba(79,209,165,.14);color:var(--mint)}
+.pill.warm{background:rgba(255,194,71,.14);color:var(--gold)}
+.card h3{font-size:16.5px;font-weight:700;line-height:1.5;margin-bottom:9px}
+.card p{font-size:13.8px;color:var(--sub);line-height:1.7}
+.card .foot{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;font-size:12.5px;color:#7d8c9c}
+
+/* two-column */
+.split{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:start}
+
+/* timeline */
+.timeline{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 22px}
+.tl-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.tl-item:last-child{border-bottom:none}
+.tl-date{flex:none;width:62px;font-size:12.5px;color:#7d8c9c;line-height:1.5;padding-top:2px}
+.tl-body h3{font-size:15.5px;font-weight:700;margin-bottom:6px}
+.tl-body p{font-size:13.6px;color:var(--sub)}
+
+/* topic chips panel */
+.panel{background:linear-gradient(160deg,#1a2430,#121922);border:1px solid var(--line);border-radius:14px;padding:22px}
+.panel h3{font-size:16.5px;margin-bottom:6px}
+.panel .desc{font-size:13.5px;color:var(--sub);margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chips a{
+  font-size:13px;padding:6px 13px;border-radius:99px;
+  border:1px solid var(--line);color:#c3d0dc;background:#161e28;transition:.2s;
+}
+.chips a:hover{border-color:var(--hot);color:#fff;background:rgba(255,90,60,.14)}
+.panel-note{margin-top:18px;font-size:12.5px;color:#7d8c9c;line-height:1.7;border-top:1px dashed var(--line);padding-top:14px}
+
+/* article */
+.article-box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px}
+.article-box h3{font-size:18px;font-weight:800;margin-bottom:14px}
+.article-box h4{font-size:15.5px;font-weight:700;margin:20px 0 8px;color:#dfe8f1}
+.article-box p{font-size:14.4px;color:#b3c0cd;margin-bottom:10px}
+.article-box p:last-child{margin-bottom:0}
+
+/* rules / value */
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.vcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.vcard .ico{
+  width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,90,60,.13);margin-bottom:14px;
+}
+.vcard h3{font-size:15.5px;margin-bottom:8px}
+.vcard p{font-size:13.6px;color:var(--sub)}
+
+/* faq */
+.faq{display:grid;gap:12px}
+details.faq-item{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:16px 20px;transition:.2s;
+}
+details.faq-item[open]{border-color:#3d4b5c}
+details.faq-item summary{
+  cursor:pointer;font-size:15px;font-weight:700;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::after{content:"+";color:var(--hot);font-size:19px;font-weight:700;flex:none}
+details.faq-item[open] summary::after{content:"−"}
+details.faq-item p{font-size:14px;color:var(--sub);margin-top:11px}
+
+/* footer */
+footer{border-top:1px solid var(--line);background:var(--bg2);padding:40px 0 30px;margin-top:20px}
+.foot-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.foot-brand{max-width:420px}
+.foot-brand .logo{margin-bottom:12px}
+.foot-brand p{font-size:13.4px;color:var(--sub)}
+.foot-cols{display:flex;gap:52px;flex-wrap:wrap}
+.foot-col h4{font-size:13.5px;color:#cfdae5;margin-bottom:11px;font-weight:700}
+.foot-col a{display:block;font-size:13.2px;color:var(--sub);padding:3px 0}
+.foot-col a:hover{color:var(--hot)}
+.foot-bottom{padding-top:18px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#6f7f90}
+
+/* responsive */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;padding:40px 0}
+  .hero-art{display:none}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .nav{height:auto;padding:12px 0;flex-direction:column;align-items:flex-start;gap:10px}
+  .nav-links{gap:2px}
+  .nav-links a{font-size:13.5px;padding:6px 9px}
+  .grid-3{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:1fr}
+  .hero-stats{gap:20px}
+  h1{font-size:26px}
+  section{padding:40px 0}
+  .foot-cols{gap:32px}
+  .article-box{padding:20px}
+  .timeline{padding:4px 16px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="51爆料网 首页">
+      <svg width="30" height="30" viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1b2532"/>
+        <path d="M17 19h30v7H25v6h17v7H25v11h-8z" fill="#ff5a3c"/>
+        <circle cx="47" cy="47" r="6" fill="#ffc247"/>
+      </svg>
+      51爆料网
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#top">首页</a>
+      <a href="#hot">热门爆料</a>
+      <a href="#latest">最新动态</a>
+      <a href="#topics">话题合集</a>
+      <a href="#about">关于平台</a>
+      <a href="#faq">常见问题</a>
+      <a class="cta" href="#hot">立即浏览</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="badge"><i></i>热点爆料 · 吃瓜黑料 · 持续更新</span>
+        <h1>51爆料网</h1>
+        <p class="lead">51爆料网是一个围绕网络热点爆料与吃瓜黑料内容组织的信息浏览站点。这里把讨论集中的事件、话题与线索按类别归拢，方便读者在有限时间内看清一件事的来龙去脉与当前讨论重点。</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#hot">浏览热门爆料</a>
+          <a class="btn btn-ghost" href="#latest">查看最新动态</a>
+          <a class="btn btn-ghost" href="#" download data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>6</b><span>内容分区</span></div>
+          <div><b>每日</b><span>热点归集</span></div>
+          <div><b>3 类</b><span>话题标签</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <div class="art-line w85"></div>
+        <div class="art-line w70"></div>
+        <div class="art-line w50"></div>
+        <div class="art-line w85"></div>
+        <div class="art-line w70"></div>
+        <div class="art-tag">
+          <span>热点爆料</span><span>吃瓜合集</span><span>黑料线索</span><span>话题追踪</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOT -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2><span>01</span>热门爆料</h2>
+          <p>当前讨论热度较高的爆料内容，按关注度排序呈现。</p>
+        </div>
+        <a class="more" href="#topics">查看全部话题 →</a>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="meta"><span class="pill hot">热度高</span><span>热点爆料</span></div>
+          <h3>社交平台争议事件讨论集中</h3>
+          <p>围绕某社交账号言论引发的讨论在多个平台扩散，51爆料网将相关讨论按时间顺序归拢，便于对照不同阶段的信息变化。</p>
+          <div class="foot"><span>话题标签：平台争议</span><span>持续更新</span></div>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill hot">热度高</span><span>吃瓜合集</span></div>
+          <h3>网络红人合作关系变化引关注</h3>
+          <p>合作内容与公开表态出现差异，网友据此展开讨论。本栏目整合公开可查的内容节点，呈现事件被关注的起因与转折。</p>
+          <div class="foot"><span>话题标签：红人动向</span><span>持续更新</span></div>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill warm">讨论中</span><span>黑料线索</span></div>
+          <h3>品牌营销文案争议被集中讨论</h3>
+          <p>某品牌营销文案上线后引发不同解读，讨论焦点集中在表达方式与受众感受。相关公开内容与舆论反应被分类收录。</p>
+          <div class="foot"><span>话题标签：品牌舆情</span><span>持续更新</span></div>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill warm">讨论中</span><span>热点爆料</span></div>
+          <h3>短视频内容真实性讨论升温</h3>
+          <p>一段短视频被指存在剪辑处理，观众对内容真实性提出疑问。51爆料网按公开发布的顺序梳理讨论中出现的不同说法。</p>
+          <div class="foot"><span>话题标签：内容真伪</span><span>持续更新</span></div>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill new">新进榜</span><span>吃瓜合集</span></div>
+          <h3>行业内部人员发言引发连锁讨论</h3>
+          <p>一位从业者的公开发言被大量转发，衍生出对行业惯例的讨论。相关发言原文与后续回应被分开记录，避免混淆。</p>
+          <div class="foot"><span>话题标签：行业讨论</span><span>持续更新</span></div>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill new">新进榜</span><span>黑料线索</span></div>
+          <h3>旧帖被重新翻出形成二次讨论</h3>
+          <p>数年前的公开帖文被重新引用，形成新一轮关注。本站保留原帖发布语境，并标注二次讨论的起点时间。</p>
+          <div class="foot"><span>话题标签：二次讨论</span><span>持续更新</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST + TOPICS -->
+  <section id="latest">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2><span>02</span>最新动态</h2>
+          <p>按时间顺序记录爆料内容的出现与后续回应。</p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-date">近期</div>
+            <div class="tl-body">
+              <h3>争议内容首发与传播路径记录</h3>
+              <p>51爆料网按公开发布顺序记录内容首发位置与扩散节点，帮助读者区分原始内容与二次转述，减少信息在传播中的偏差。</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">近期</div>
+            <div class="tl-body">
+              <h3>相关方公开回应被同步收录</h3>
+              <p>当事方或相关机构的公开回应被单独标注，与爆料内容并列呈现，读者可对照回应时间与内容差异，形成自己的判断。</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">近期</div>
+            <div class="tl-body">
+              <h3>同类话题合并至同一合集</h3>
+              <p>针对同一事件的不同分支讨论，本站将其合并进统一话题合集，避免重复条目堆积，也方便回看事件完整脉络。</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">近期</div>
+            <div class="tl-body">
+              <h3>热度回落内容转入归档区</h3>
+              <p>讨论量下降的爆料不会立即删除，而是转入归档状态，保留原始记录，便于后续检索与对照。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" id="topics">
+          <h3>话题合集</h3>
+          <p class="desc">按领域与讨论类型归纳的常见话题入口，点击可跳转至对应内容区域。</p>
+          <div class="chips">
+            <a href="#hot">平台争议</a>
+            <a href="#hot">红人动向</a>
+            <a href="#hot">品牌舆情</a>
+            <a href="#hot">内容真伪</a>
+            <a href="#hot">行业讨论</a>
+            <a href="#hot">二次讨论</a>
+            <a href="#latest">首发记录</a>
+            <a href="#latest">公开回应</a>
+            <a href="#latest">归档内容</a>
+          </div>
+          <p class="panel-note">话题合集仅对公开讨论内容做归拢与编号，不对事件本身下结论。部分内容仍在讨论中，后续可能补充新的公开信息。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / VALUE -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2><span>03</span>51爆料网的内容方式</h2>
+          <p>以公开信息为边界，按可核对的方式组织爆料内容。</p>
+        </div>
+      </div>
+      <div class="grid-4">
+        <div class="vcard">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff5a3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          </div>
+          <h3>来源标注</h3>
+          <p>每条爆料尽量注明首次公开出现的位置与时间，方便读者回到原始语境核对内容。</p>
+        </div>
+        <div class="vcard">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff5a3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+          </div>
+          <h3>分层呈现</h3>
+          <p>原始内容、二次转述与公开回应分栏呈现，读者能清楚看到信息在哪一步发生了变化。</p>
+        </div>
+        <div class="vcard">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff5a3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg>
+          </div>
+          <h3>持续补充</h3>
+          <p>讨论中的事件会随公开信息更新而补充条目，已归档内容保留原状，不做覆盖式修改。</p>
+        </div>
+        <div class="vcard">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff5a3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.6 6.6L21 11l-6.4 2.4L12 20l-2.6-6.6L3 11l6.4-2.4z"/></svg>
+          </div>
+          <h3>不做定论</h3>
+          <p>平台只呈现公开讨论与已知信息，不对当事人作定性判断，观点部分交由读者自行分辨。</p>
+        </div>
+      </div>
+
+      <div class="article-box" style="margin-top:26px">
+        <h3>为什么需要集中浏览爆料内容</h3>
+        <p>热点事件往往在短时间内产生大量转述，同一件事会出现不同版本的说法。51爆料网做的事情，是把这些分散在评论区、转发和截图里的内容整理到一处，标注出现的时间与来源，让读者不必在多个页面之间反复跳转。</p>
+        <p>整理并不等于背书。一条爆料被收录，只说明它在公开范围内被讨论过，并不代表其内容已被证实。读者在浏览时，可以重点看三个信息：这条内容最早出现在哪里、当事人是否作出回应、后续有没有新的公开信息推翻前面的说法。</p>
+        <h4>如何使用本站</h4>
+        <p>如果只想了解当下讨论最集中的内容，可以从「热门爆料」进入；如果关心一件事的推进过程，可以看「最新动态」中的时间线；如果需要按领域找内容，「话题合集」提供了按争议类型划分的入口。三个入口对应三种浏览习惯，内容之间有交叉但侧重不同。</p>
+        <p>对于已经降温的事件，本站不会立即删除，而是转入归档。这样做的原因是，很多爆料在若干时间后会被重新提起，保留原始记录可以避免二次讨论时信息失真。51爆料网倾向于让内容可回溯，而不是追求即时刷新。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2><span>04</span>常见问题</h2>
+          <p>关于内容来源、更新节奏与浏览方式。</p>
+        </div>
+      </div>
+      <div class="faq">
+        <details class="faq-item" open>
+          <summary>51爆料网的内容从哪里来？</summary>
+          <p>内容源于公开可见的网络讨论，包括公开发帖、公开回应与媒体已发布的信息。平台对来源做标注，但不代替任何一方确认事实。</p>
+        </details>
+        <details class="faq-item">
+          <summary>爆料内容是否都经过证实？</summary>
+          <p>不是。本站收录的是被公开讨论的内容，其中部分说法仍存在争议。页面中会尽量区分「已公开回应」与「仍为单方说法」两类信息，读者需自行判断。</p>
+        </details>
+        <details class="faq-item">
+          <summary>为什么有些内容会进入归档？</summary>
+          <p>当一条爆料的讨论量明显下降，且没有新的公开信息补充时，会转入归档状态。归档不等于删除，原始记录仍可通过话题合集检索。</p>
+        </details>
+        <details class="faq-item">
+          <summary>如何快速找到某个话题？</summary>
+          <p>可在「话题合集」中按争议类型定位，例如平台争议、品牌舆情、内容真伪等；也可以从「热门爆料」按热度排序浏览，再进入具体条目查看时间线。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1b2532"/>
+            <path d="M17 19h30v7H25v6h17v7H25v11h-8z" fill="#ff5a3c"/>
+            <circle cx="47" cy="47" r="6" fill="#ffc247"/>
+          </svg>
+          51爆料网
+        </a>
+        <p>51爆料网聚焦网络热点爆料与吃瓜黑料内容的归集浏览，按热门、最新与话题三个维度组织信息，为读者提供可回溯的公开讨论记录。</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>内容入口</h4>
+          <a href="#hot">热门爆料</a>
+          <a href="#latest">最新动态</a>
+          <a href="#topics">话题合集</a>
+        </div>
+        <div class="foot-col">
+          <h4>了解平台</h4>
+          <a href="#about">内容方式</a>
+          <a href="#faq">常见问题</a>
+          <a href="#top">返回顶部</a>
+        </div>
+        <div class="foot-col">
+          <h4>使用说明</h4>
+          <a href="#about">来源标注</a>
+          <a href="#faq">内容核实</a>
+          <a href="#latest">归档规则</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 51爆料网 · 内容来自公开讨论，观点不代表本站立场</span>
+      <span>浏览时请以公开信息为准，理性看待爆料内容</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+  </html>
